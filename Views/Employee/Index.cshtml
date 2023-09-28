@@ -1,0 +1,47 @@
+﻿@using MVC_Lap2.Models;
+@model IEnumerable<Employee>
+@{
+    ViewData["Title"] = "Index";
+    int index = 1;
+}
+
+<hr />
+<a href="/Employee/AddForm" class="btn btn-outline-primary">Add New Student</a>
+<hr />
+
+
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <td>     </td>
+            <td>Name</td>
+            <td>Age</td>
+            <td>Address</td>
+            <td>Salary</td>
+            <td>Email</td>
+            <td>Controll</td>
+        </tr>
+    </thead>
+   
+        @foreach (Employee emp in Model)
+    {
+        <tbody>
+        <tr>
+            <td>@(index++)</td>
+            <td>@emp.name</td>
+            <td>@emp.age</td>
+            <td>@emp.address</td>
+            <td>@emp.salary</td>
+            <td>@emp.email</td>
+            <td>
+                    <a href="/Employee/Details/@emp.id"> <i class="fa-solid fa-circle-info"></i> </a>
+                    <a href="/Employee/EditForm/@emp.id"> <i class="fa-solid fa-pen-to-square"></i> </a>
+                    <a href="/Employee/Delete/@emp.id"> <i class="fa-solid fa-trash"></i> </a>
+            </td>
+            <tr/>
+          </tbody>
+          }
+</table>
+
+

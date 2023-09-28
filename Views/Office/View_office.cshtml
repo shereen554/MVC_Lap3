@@ -1,0 +1,32 @@
+﻿@using MVC_Lap2.Models;
+@model IEnumerable<Office>
+
+@{
+    ViewData["Title"] = "View_office";
+    int index = 1;
+}
+
+<h1>View_office</h1>
+<table class="table table-bordered border-primary">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Location</th>
+            
+        </tr>
+    </thead>
+   @foreach(Office ofc in Model)
+    {
+        <tbody>
+            <tr>
+                <th scope="row">@(index++)</th>
+                <td>@ofc.Name</td>
+                <td>@ofc.location</td>
+            </tr>
+
+        </tbody>
+    }
+</table>
+
+

@@ -1,0 +1,51 @@
+﻿@using MVC_Lap2.Models;
+@model Employee
+
+@{
+    ViewData["Title"] = "EditForm";
+}
+
+<h1>Edit Emplyee</h1>
+
+<h1>AddForm</h1>
+<Form action="/Employee/AddInDB">
+
+    <label for="Name">Name</label>
+    <input type="text" id="Name" name="Name" value="@Model.name" />
+    <br />
+
+    <label for="Age">Age</label>
+    <input type="number" id="Age" name="Age" value="@Model.age" />
+    <br />
+
+
+    <label for="Address">Address</label>
+    <input type="text" id="Address" name="Address" value="@Model.address" />
+    <br />
+
+    <label for="Salary">Salary</label>
+    <input type="text" id="Salary" name="Salary" value="@Model.salary" />
+    <br />
+
+    <label for="Email">Email</label>
+    <input type="text" id="Email" name="Email" value="@Model.email" />
+    <br />
+
+
+    <label for="Password">Password</label>
+    <input type="text" id="Password" name="Password" />
+    <br />
+
+    <label for="office">Office</label>
+    <select name="office_id" id="office">
+        @foreach (Office ofc in ViewBag.office)
+        {
+            <option value="@ofc.id">@ofc.Name</option>
+        }
+    </select>
+    <br />
+
+    <input type="submit" value="Add" />
+</Form>
+
+
